@@ -7,28 +7,30 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 
 public class Output {
-	private static final PrintStream out = getPrintStream();
+    private static final PrintStream out = getPrintStream();
 	
     public static void println(String line) {
 		out.println(line);
 	}
 	
     private static PrintStream getPrintStream() {
-      PrintStream result = null;
-	  try {
-        Class<Console> clazz = Console.class;
-        Method method = clazz.getDeclaredMethod("encoding");
-        method.setAccessible(true);
-        String encoding = (String) method.invoke(null);
-	    if ("cp866".equals(encoding)) {
-          result = new PrintStream(System.out, true, "cp866");
-        }
-	  } catch (NoSuchMethodException
+        PrintStream result = null;
+	      try {
+            Class<Console> clazz = Console.class;
+            Method method = clazz.getDeclaredMethod("encoding");
+            method.setAccessible(true);
+            String encoding = (String) method.invoke(null);
+	          if (false && "cp866".equals(encoding)) {
+                result = new PrintStream(System.out, true, "cp866");
+            }
+	      } catch (NoSuchMethodException
 	           | UnsupportedEncodingException | IllegalAccessException
-               | InvocationTargetException exception) {
+             | InvocationTargetException exception) {
 		  exception.printStackTrace();
 		  System.exit(1);
       }
-      return result;
-  }
+        if (result == null)
+            result = System.out;
+        return result;
+    }
 }
