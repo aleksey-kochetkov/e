@@ -3,6 +3,9 @@ package e.grkalg;
 import e.Output;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.function.Predicate;
+import java.util.Set;
+import java.util.HashSet;
 
 public class GrkAlg {
 
@@ -87,5 +90,25 @@ public class GrkAlg {
             quickSort(array, left, bound - 1);
             quickSort(array, bound + 1, right);
         }
+    }
+
+    public static <T> T breadthFirstSearch(Graph<T> graph, T start,
+                                                Predicate<T> predicate) {
+        T result = null;
+        Queue<T> queue = new LinkedList<>(graph.getEdgesList(start));
+        Set<T> checked = new HashSet<>();
+        while (!queue.isEmpty()) {
+            T v = queue.remove();
+            if (checked.contains(v)) {
+                continue;
+            }
+            checked.add(v);
+            if (predicate.test(v)) {
+                result = v;
+                break;
+            }
+            queue.addAll(graph.getEdgesList(v));
+        }
+        return result;
     }
 }

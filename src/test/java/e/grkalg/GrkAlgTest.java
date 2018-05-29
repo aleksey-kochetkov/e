@@ -39,4 +39,19 @@ public class GrkAlgTest {
         GrkAlg.quickSort(array, 0, array.length - 1);
         assertThat(array, is(expect));
     }
+
+    @Test
+    public void whenBreadthFirstSearch() {
+        Graph<String> graph = new Graph<>();
+        graph.addEdge("One", "Two", "Three", "Four");
+        graph.addEdge("Two", "Five", "Six");
+        graph.addEdge("Three", "One");
+        graph.addEdge("Four");
+        graph.addEdge("Five");
+        graph.addEdge("Six", "Seven");
+        graph.addEdge("Seven");
+        String result = GrkAlg.breadthFirstSearch(graph, "One",
+                                                        "Seven"::equals);
+        assertThat(result, is("Seven"));
+    }
 }
