@@ -6,11 +6,14 @@ import java.util.LinkedList;
 import java.util.function.Predicate;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
+import java.util.LinkedList;
 
 public class GrkAlg {
 
     public static void main(String[] args) {
-        graphDemo();
+//        graphDemo();
+        weightedGraphDemo();
     }
 
     private static void graphDemo() {
@@ -36,8 +39,26 @@ public class GrkAlg {
         }
     }
 
-    private static boolean salesMango(String name) {
-        return name.charAt(name.length() - 1) == 'm';
+    private static void weightedGraphDemo() {
+        WeightedGraph<String> graph = new WeightedGraph<>();
+        String start = "book";
+        String finish = "piano";
+        graph.addEdge(start, "poster", 0);
+        graph.addEdge(start, "disk", 5);
+        graph.addEdge("poster", "bass", 30);
+        graph.addEdge("poster", "drum", 35);
+        graph.addEdge("disk", "bass", 15);
+        graph.addEdge("disk", "drum", 20);
+        graph.addEdge("bass", finish, 20);
+        graph.addEdge("drum", finish, 10);
+        graph.addEdge(finish);
+        WeightedGraphSearch<String> search = new WeightedGraphSearch<>(graph);
+        List<String> way = search.cheepestWaySearch(start, finish);
+        for (String s : way) {
+            Output.format("%s<-", s);
+        }
+        Output.println();
+        Output.format("%s cost:%f", finish, search.wayCost(finish));
     }
 
     public static int binarySearch(int[] array, int value) {
@@ -90,6 +111,10 @@ public class GrkAlg {
             quickSort(array, left, bound - 1);
             quickSort(array, bound + 1, right);
         }
+    }
+
+    private static boolean salesMango(String name) {
+        return name.charAt(name.length() - 1) == 'm';
     }
 
     public static <T> T breadthFirstSearch(Graph<T> graph, T start,

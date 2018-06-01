@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>e</groupId>
   <artifactId>I0528</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,4 +18,20 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+    <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.2</version>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>e.grkalg.GrkAlg</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
+        </plugins>
+    </build>
 </project>
