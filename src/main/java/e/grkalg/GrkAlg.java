@@ -41,16 +41,15 @@ public class GrkAlg {
 
     private static void weightedGraphDemo() {
         WeightedGraph<String> graph = new WeightedGraph<>();
-        String start = "book";
-        String finish = "piano";
-        graph.addEdge(start, "poster", 0);
-        graph.addEdge(start, "disk", 5);
-        graph.addEdge("poster", "bass", 30);
-        graph.addEdge("poster", "drum", 35);
-        graph.addEdge("disk", "bass", 15);
-        graph.addEdge("disk", "drum", 20);
-        graph.addEdge("bass", finish, 20);
-        graph.addEdge("drum", finish, 10);
+        String start = "A";
+        String finish = "E";
+        graph.addEdge(start, "B", 2);
+        graph.addEdge(start, "C", 2);
+        graph.addEdge("C", "B", 2);
+        graph.addEdge("B", "D", 2);
+        graph.addEdge("D", "C", -1);
+        graph.addEdge("B", finish, 2);
+        graph.addEdge("D", finish, 2);
         graph.addEdge(finish);
         WeightedGraphSearch<String> search = new WeightedGraphSearch<>(graph);
         List<String> way = search.cheepestWaySearch(start, finish);
