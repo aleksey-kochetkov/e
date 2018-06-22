@@ -1,19 +1,23 @@
 package e.grkalg;
 
 import e.Output;
+
 import java.util.Queue;
-import java.util.LinkedList;
-import java.util.function.Predicate;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.function.Predicate;
 
 public class GrkAlg {
 
     public static void main(String[] args) {
 //        graphDemo();
-        weightedGraphDemo();
+//        weightedGraphDemo();
+        coverageProblemDemo();
+//        coverageProblemDemo(16, 4096);
     }
 
     private static void graphDemo() {
@@ -134,5 +138,54 @@ public class GrkAlg {
             queue.addAll(graph.getEdgesList(v));
         }
         return result;
+    }
+
+    private static void coverageProblemDemo() {
+        Set<String> states = new HashSet<>();
+        states.add("az");
+        states.add("ca");
+        states.add("id");
+        states.add("mt");
+        states.add("nv");
+        states.add("or");
+        states.add("ut");
+        states.add("wa");
+        CoverageProblem<String, String> problem = new CoverageProblem<>(states);
+        String[] tmp = {"id", "nv", "ut"};
+        problem.addSubset("one", new HashSet<>(Arrays.asList(tmp)));
+        tmp = new String[] {"id", "mt", "wa"};
+        problem.addSubset("two", new HashSet<>(Arrays.asList(tmp)));
+        tmp = new String[] {"ca", "nv", "or"};
+        problem.addSubset("three", new HashSet<>(Arrays.asList(tmp)));
+        tmp = new String[] {"nv", "ut"};
+        problem.addSubset("four", new HashSet<>(Arrays.asList(tmp)));
+        tmp = new String[] {"az", "ca"};
+        problem.addSubset("five", new HashSet<>(Arrays.asList(tmp)));
+        System.out.println(problem.getResult());
+    }
+
+    private static void coverageProblemDemo(int stateCount, int stationCount) {
+        final Random RANDOM = new Random();
+        final int MAX_COVERAGE = RANDOM.nextInt(stateCount);
+        System.out.format("Max coverage set to %d%n", MAX_COVERAGE);
+        Set<Integer> states = new HashSet<>();
+        for (int i = 0; i < stateCount; i++) {
+            states.add(i);
+        }
+        CoverageProblem<Integer, Integer> problem = new CoverageProblem<>(states);
+        for (int i = 0; i < stationCount; i++) {
+            Set<Integer> tmp = new HashSet<>();
+            int bound = RANDOM.nextInt(MAX_COVERAGE + 1);
+            for (int j = 0; j <= bound; j++) {
+                tmp.add(RANDOM.nextInt(stationCount));
+            }
+            problem.addSubset(i, tmp);
+            System.out.format("%d:%s%n", i, tmp.toString());
+        }
+        Set<Integer> result = problem.getResult();
+        System.out.println(result);
+//        for (Integer station : result) {
+//            System.out.format("%d:%s", station, problem.getSubset(station).toString());
+//        }
     }
 }
