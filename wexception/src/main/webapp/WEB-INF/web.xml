@@ -1,0 +1,22 @@
+<web-app>
+    <servlet>
+        <servlet-name>ExceptionServlet</servlet-name>
+        <servlet-class>e.ExceptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExceptionServlet</servlet-name>
+        <url-pattern>/exception</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HandlerServlet</servlet-name>
+        <servlet-class>e.HandlerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HandlerServlet</servlet-name>
+        <url-pattern>/handler</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/handler</location>
+    </error-page>
+</web-app>
