@@ -16,5 +16,6 @@
         <module>I0528</module>
         <module>jackson</module>
         <module>wexception</module>
+        <module>structured</module>
     </modules>
 </project>

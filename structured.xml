@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+  <entry number="1" updated="2018-09-17">
+	<description>J2SE</description>
+    <entries>
+      <entry number="1" updated="2018-09-17">
+		<description>Collections Framework</description>
+	  </entry>
+    </entries>
+  </entry>
+  <entry number="2" updated="2018-09-17">
+	<description>Servlet, JSP, JSTL</description>
+    <entries>
+      <entry number="1" updated="2018-09-17">
+		<description>HTTP</description>
+        <entry number="1" updated="2018-09-17">
+          <description>Delete me 1.1</description>
+        </entry>
+      </entry>
+    </entries>
+    <entry number="2" updated="2018-09-17">
+		<description>Delete Me 2</description>
+        <entry number="1" updated="2018-09-17">
+            <description>Delete me 2.1</description>
+        </entry>
+        <entry number="2" updated="2018-09-17">
+            <description>Delete me 2.2</description>
+        </entry>
+    </entry>
+  </entry>
+  <entry number="3" updated="2018-09-17">
+	<description>XML</description>
+    <entry number="1" updated="2018-09-17">
+      <description>XML document must contain one root element that is the parent of all other elements.</description>
+    </entry>
+  </entry>
+</entries>
