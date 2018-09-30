@@ -3,19 +3,32 @@
   <entry number="1" updated="2018-09-17">
 	<description>J2SE</description>
     <entries>
-      <entry number="1" updated="2018-09-17">
-		<description>Collections Framework</description>
-	  </entry>
+	  <entry number="1" updated="2018-09-17">
+        <description>Collections Framework</description>
+      </entry>
     </entries>
   </entry>
   <entry number="2" updated="2018-09-17">
 	<description>Servlet, JSP, JSTL</description>
     <entries>
       <entry number="1" updated="2018-09-17">
-		<description>HTTP</description>
-        <entry number="1" updated="2018-09-17">
-          <description>Delete me 1.1</description>
-        </entry>
+        <description>HTTP</description>
+        <entries>
+          <entry number="1" updated="2018-09-17">
+            <description>HTTP runs on top of TCP/IP.</description>
+          </entry>
+          <entry number="2" updated="2018-09-17">
+            <description>Request stream key elements: HTTP method, an URL, arguments to a method.</description>
+            <entries>
+<entry number="1" updated="2018-09-17">
+<description>GET, POST, PUT, DELETE, HEAD, OPTIONS, TRACE</description>
+</entry>
+            </entries>
+          </entry>
+          <entry number="3" updated="2018-09-17">
+            <description>Response stream key elements: status code, content-type, the content.</description>
+          </entry>
+        </entries>
       </entry>
     </entries>
     <entry number="2" updated="2018-09-17">
@@ -29,9 +42,14 @@
     </entry>
   </entry>
   <entry number="3" updated="2018-09-17">
+    <description>The identity (===) operator behaves identically to the equality (==) operator except no type conversion is done, and the types must be the same to be considered equal.</description>
+  </entry>
+  <entry number="4" updated="2018-09-17">
 	<description>XML</description>
-    <entry number="1" updated="2018-09-17">
-      <description>XML document must contain one root element that is the parent of all other elements.</description>
-    </entry>
+    <entries>
+      <entry number="1" updated="2018-09-17">
+        <description>XML document must contain one root element that is the parent of all other elements.</description>
+      </entry>
+    </entries>
   </entry>
 </entries>

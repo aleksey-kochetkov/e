@@ -1,7 +1,10 @@
 package e;
 
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Queue;
 import java.util.List;
+import java.util.LinkedList;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -32,7 +35,7 @@ public class XML {
 
     public void print(String parentCode, boolean recursive) {
         if (parentCode == null) {
-       	    System.out.print(this.entries.toString(true));
+       	    System.out.print(this.entries.plainToString());
         } else if (parentCode.length() == 0 || "0".equals(parentCode)){
             System.out.print(this.entries.toString(recursive));
         } else {
@@ -51,21 +54,49 @@ public class XML {
             return this.toString(false);
         }
 
-        private String toString(boolean recursive) {
+        public String plainToString() {
             StringBuilder sb = new StringBuilder();
-            for (Entry e : this.entries) {
-//                sb.append(String.format("%s %s %s%n", e.updated, e.code,
-                sb.append(String.format("%s %s%n", e.code,
-                                                         e.description));
-            }
-            if (recursive) {
-                for (Entry e : this.entries) {
-                    if (e.entries != null) {
-                        sb.append(e.entries);
-                    }
+            return this.plainToString(sb, this.entries);
+        }
+
+        private String plainToString(StringBuilder sb, List<Entry> entries) {
+            for (Entry e : entries) {
+                this.append(sb, e);
+                if (e.entries != null) {
+                    this.plainToString(sb, e.entries.entries);
                 }
             }
             return sb.toString();
+        }
+
+        private String toString(boolean recursive) {
+            StringBuilder sb = new StringBuilder();
+            Queue<Entry> out;
+            Queue<Entry> children = new LinkedList<>();
+            this.appendForEach(sb, this.entries, children, recursive);
+            while (children.size() > 0) {
+                out = children;
+                children = new LinkedList<>();
+                this.appendForEach(sb, out, children, recursive);
+            }
+            return sb.toString();
+        }
+
+        private void appendForEach(StringBuilder sb,
+                       Collection<Entry> out, Collection<Entry> children,
+                                                     boolean recursive) {
+            for (Entry e : out) {
+                this.append(sb, e);
+                if (recursive && e.entries != null) {
+                    children.addAll(e.entries.entries);
+                }
+            }
+        }
+
+        private void append(StringBuilder sb, Entry e) {
+//                sb.append(String.format("%s %s %s%n", e.updated, e.code,
+                sb.append(String.format("%s %s%n", e.code,
+                                                         e.description));
         }
     }
 

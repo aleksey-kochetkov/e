@@ -17,5 +17,6 @@
         <module>jackson</module>
         <module>wexception</module>
         <module>structured</module>
+        <module>hibernate</module>
     </modules>
 </project>
