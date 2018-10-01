@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS file_entity CASCADE;
+CREATE TABLE file_entity (
+  name VARCHAR(16) PRIMARY KEY,
+  bytes BYTEA NOT NULL
+);

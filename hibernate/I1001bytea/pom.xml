@@ -1,0 +1,11 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>I1001bytea</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <parent>
+        <artifactId>hibernate</artifactId>
+        <groupId>e</groupId>
+        <version>1.0</version>
+    </parent>
+</project>

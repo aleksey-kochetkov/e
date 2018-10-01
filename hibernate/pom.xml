@@ -16,6 +16,7 @@
     <modules>
         <module>I0929hb</module>
         <module>I0930hb</module>
+        <module>I1001bytea</module>
     </modules>
 
     <dependencies>
