@@ -18,5 +18,6 @@
         <module>wexception</module>
         <module>structured</module>
         <module>hibernate</module>
+        <module>I1001file</module>
     </modules>
 </project>

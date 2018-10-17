@@ -17,6 +17,10 @@
         <module>I0929hb</module>
         <module>I0930hb</module>
         <module>I1001bytea</module>
+        <module>I1016inh1</module>
+        <module>I1016inh2</module>
+        <module>I1016inh3</module>
+        <module>I1016inh4</module>
         <module>I1017new</module>
     </modules>
 
