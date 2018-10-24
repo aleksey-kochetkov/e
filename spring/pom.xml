@@ -1,0 +1,13 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring</artifactId>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>e</groupId>
+        <artifactId>e</artifactId>
+        <version>2.0</version>
+    </parent>
+    <modules>
+        <module>I1024hello</module>
+    </modules>
+</project>
