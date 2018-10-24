@@ -19,5 +19,6 @@
         <module>structured</module>
         <module>hibernate</module>
         <module>I1001file</module>
+        <module>spring</module>
     </modules>
 </project>
