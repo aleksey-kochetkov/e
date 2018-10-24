@@ -9,5 +9,6 @@
     </parent>
     <modules>
         <module>I1024hello</module>
+        <module>I1025form</module>
     </modules>
 </project>
