@@ -10,5 +10,6 @@
     <modules>
         <module>I1024hello</module>
         <module>I1025form</module>
+        <module>I1027static</module>
     </modules>
 </project>
