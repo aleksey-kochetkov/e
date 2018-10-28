@@ -1,8 +1,8 @@
 <hibernate-mapping>
     <class name="e.Employee" table="employee">
-        <id name="id" column="id">
+        <code name="code" column="code">
             <generator class="identity"/>
-        </id>
+        </code>
         <property name="name" column="name"/>
         <property name="salary" column="salary"/>
         <bag name="certificates" cascade="all">

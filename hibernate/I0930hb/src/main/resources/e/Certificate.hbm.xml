@@ -1,8 +1,8 @@
 <hibernate-mapping>
     <class name="e.Certificate" table="certificate">
-        <id name="id" column="id">
+        <code name="code" column="code">
             <generator class="identity"/>
-        </id>
+        </code>
         <property name="descript" column="descript"/>
     </class>
 </hibernate-mapping>

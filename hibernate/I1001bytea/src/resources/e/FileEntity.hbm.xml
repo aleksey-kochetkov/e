@@ -1,8 +1,8 @@
 <hibernate-mapping>
     <class name="e.FileEntity" table="file_entity">
-        <id name="name" column="name">
+        <code name="name" column="name">
             <generator class="assigned"/>
-        </id>
+        </code>
         <property name="bytes" column="bytes"/>
     </class>
 </hibernate-mapping>

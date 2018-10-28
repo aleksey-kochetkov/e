@@ -19,7 +19,7 @@
   </tr>
   <tr>
     <td>ID</td>
-    <td>${code}</td>
+    <td>${countryCode}</td>
   </tr>
 </table>
 </body>

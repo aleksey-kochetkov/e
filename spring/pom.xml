@@ -12,5 +12,6 @@
         <module>I1025form</module>
         <module>I1026redirect</module> 
         <module>I1027static</module>
+        <module>I1025frmsl</module>
     </modules>
 </project>
