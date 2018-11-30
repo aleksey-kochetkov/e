@@ -14,5 +14,8 @@
         <module>I1027static</module>
         <module>I1028exception</module>
         <module>I1025frmsl</module>
+        <module>I1125jdbc</module>
+        <module>I1126hb</module>
+		<module>I1127data</module>
     </modules>
 </project>

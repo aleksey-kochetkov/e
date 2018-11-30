@@ -19,7 +19,7 @@
   </tr>
   <tr>
     <td>ID</td>
-    <td>${code}</td>
+    <td>${id}</td>
   </tr>
 </table>
 </body>

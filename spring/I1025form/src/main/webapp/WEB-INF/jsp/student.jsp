@@ -18,8 +18,8 @@
       <td><form:input path="age"/></td>
     </tr>
     <tr>
-      <td><form:label path="code">code</form:label></td>
-      <td><form:input path="code"/></td>
+      <td><form:label path="id">ID</form:label></td>
+      <td><form:input path="id"/></td>
     </tr>
     <tr>
       <td colspan="2">
