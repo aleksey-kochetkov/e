@@ -17,5 +17,6 @@
         <module>I1125jdbc</module>
         <module>I1126hb</module>
 		<module>I1127data</module>
+        <module>I1204securitya</module>
     </modules>
 </project>

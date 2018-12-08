@@ -20,6 +20,7 @@
         <module>hibernate</module>
         <module>I1001file</module>
         <module>spring</module>
+		<module>prospring5</module>
     </modules>
 
     <dependencies>
