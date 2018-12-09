@@ -18,5 +18,6 @@
         <module>I1126hb</module>
 		<module>I1127data</module>
         <module>I1204securitya</module>
+        <module>I1208securityx</module>
     </modules>
 </project>
