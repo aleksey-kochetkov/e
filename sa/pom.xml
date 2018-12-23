@@ -11,5 +11,6 @@
   </parent>
   <modules>
     <module>I1220</module>
+    <module>I1220b</module>
   </modules>
 </project>
