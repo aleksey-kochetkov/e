@@ -12,5 +12,6 @@
   <modules>
     <module>I1220</module>
     <module>I1220b</module>
+    <module>I1221</module>
   </modules>
 </project>
